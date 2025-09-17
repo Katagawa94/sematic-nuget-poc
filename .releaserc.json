@@ -11,8 +11,7 @@
       "@semantic-release/exec",
       {
         "verifyConditionsCmd": "dotnet --version",
-        "prepareCmd": "dotnet pack src/FooBarium/FooBarium.csproj --configuration Release --output ./packages -p:PackageVersion=${nextRelease.version} -p:Version=${nextRelease.version}",
-        "publishCmd": "dotnet nuget push ./packages/*.nupkg --api-key ${NUGET_TOKEN} --source https://nuget.pkg.github.com/Katagawa94/index.json --skip-duplicate"
+        "publishCmd": "chmod +x scripts/publish.sh && scripts/publish.sh ${nextRelease.version}"
       }
     ],
     "@semantic-release/github"
