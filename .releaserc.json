@@ -1,16 +1,16 @@
 {
+  "branches": ["main"],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
     [
       "@droidsolutions-oss/semantic-release-nuget",
       {
         "packCommand": "dotnet pack --configuration Release --output ./packages",
-        "pushCommand": "dotnet nuget push ./packages/*.nupkg --api-key ${GITHUB_TOKEN} --source https://nuget.pkg.github.com/@Katagawa94/index.json"
+        "pushCommand": "dotnet nuget push ./packages/*.nupkg --api-key ${GITHUB_TOKEN} --source https://nuget.pkg.github.com/Katagawa94/index.json"
       }
     ],
-    "@semantic-release/git",
     "@semantic-release/github"
   ]
 }
-
