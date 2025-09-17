@@ -8,8 +8,8 @@
       "@droidsolutions-oss/semantic-release-nuget",
       {
         "projectPath": "src/FooBarium/FooBarium.csproj",
-        "packCommand": "dotnet pack --configuration Release --output ./packages",
-        "pushCommand": "dotnet nuget push ./packages/*.nupkg --api-key ${NUGET_TOKEN} --source https://nuget.pkg.github.com/Katagawa94/index.json"
+        "packCommand": "dotnet pack src/FooBarium/FooBarium.csproj --configuration Release --output ./packages",
+        "pushCommand": "dotnet nuget push ./packages/*.nupkg --api-key ${NUGET_TOKEN}"
       }
     ],
     "@semantic-release/github"
